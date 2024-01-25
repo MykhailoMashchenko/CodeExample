@@ -11,7 +11,7 @@ import useOnboardingHandler from 'src/modules/auth/hooks/useOnboardingHandler';
 import styles from 'src/modules/auth/screens/WelcomeScreen/styles';
 import usePlaySound, {
   TypeOfPlaySound,
-} from 'src/modules/quests/hooks/usePlaySound';
+} from 'src/shared/hooks/usePlaySound';
 import { Box, Button } from 'src/shared/components';
 import SafeAreaView from 'src/shared/components/SafeAreaView';
 
