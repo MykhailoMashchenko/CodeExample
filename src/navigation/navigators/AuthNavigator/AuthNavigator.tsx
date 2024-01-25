@@ -1,3 +1,6 @@
+
+import { useCallback, useEffect, useState } from 'react';
+import { ActivityIndicator } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ChooseAuthProvider from 'src/modules/auth/screens/ChooseAuthProvider/ChooseAuthProvider';
@@ -8,10 +11,7 @@ import PersonYouLove from 'src/modules/auth/screens/PersonYouLove/PersonYouLove'
 import RequestRegistrationCode from 'src/modules/auth/screens/RequestRegistrationCode/RequestRegistrationCode';
 import SignIn from 'src/modules/auth/screens/SignIn/SignIn';
 import WelcomeScreen from 'src/modules/auth/screens/WelcomeScreen/WelcomeScreen';
-// import StorybookScreen from 'src/screens/StorybookScreen';
 
-import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator } from 'react-native';
 import { AuthStackNavigatorParamsList } from 'src/app/navigation/navigators/AuthNavigator/types';
 import Screens from 'src/app/navigation/screens';
 import { commonFlex } from 'src/app/theme/constants/commonStyles';
@@ -32,7 +32,6 @@ function AuthNavigator() {
   const requestAppConfig = useCallback(async () => {
     try {
       const res = await getAppConfigs();
-      //TODO: rewrite to more secure solution once backend is ready
       if (res?.inProcessOfStoreCheck) {
         setIsRegistrationCodeScreensVisible(!res.inProcessOfStoreCheck);
       }
